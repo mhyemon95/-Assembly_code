@@ -1,0 +1,18 @@
+.MODEL
+.DATA
+A DB 2H
+B DB 4H
+C DW '?'
+.STACK 100H
+.CODE
+MAIN PROC
+    MOV AX,@DATA
+    MOV DS,AX
+    INC A
+    DEC B
+    MOV AL,A
+    MUL B  
+    NEG AX
+    MOV AX,C
+    MAIN ENDP
+END MAIN
